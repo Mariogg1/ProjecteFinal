@@ -13,7 +13,7 @@
             header("location: principal.php?login=failed");
         }
     }else{
-        //include_once 'dades.php';
+        include_once 'dades.php';
 ?>
     <!--Header-->
         <head>

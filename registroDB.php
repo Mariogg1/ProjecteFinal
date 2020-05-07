@@ -9,17 +9,18 @@
             $segonCognom = htmlspecialchars($_POST['segonCognom']);
             $email = htmlspecialchars($_POST['Email']);
 
-            $emailDB= "SELECT * FROM usuaris WHERE email = '" . $email . "'";
-            $usuariDB = "SELECT * FROM usuaris WHERE nomUsuari = '" . $nomUsuari . "'";
+            $emailDB= "SELECT * FROM a18margongon_proyecto.usuaris WHERE email = '$email'";
+            $usuariDB = "SELECT * FROM a18margongon_proyecto.usuaris WHERE nomUsuari = '$nomUsuari'";
             
             if(mysqli_num_rows(mysqli_query($connexio, $emailDB))){
                 echo "Aquest correu ja ha sigut utilitzat";
             }elseif(mysqli_num_rows(mysqli_query($connexio, $usuariDB))){
                 echo "Aquest nom d'usuari ja ha estat registrat";
             }else{
-                $insertInDB = "INSERT INTO usuaris(nomUsuari, passwordc, nom, primerCognom, SegonCognom, correuElectronic) VALUES('$nomUsuari', '$password', '$nomReal', '$primerCognom', '$segonCognom', '$email')";
+                $insertInDB = "INSERT INTO a18margongon_proyecto.usuaris VALUES('$nomUsuari', '$password', '$nomReal', '$primerCognom', '$segonCognom', '$email');";
+                $connexio->query($insertInDB);
                 if(!mysqli_query($connexio, $insertInDB)){
-                    echo "Error a la DataBase";
+                    echo "<h1>Error a la DataBase</h1>";
                 }
             }
         }

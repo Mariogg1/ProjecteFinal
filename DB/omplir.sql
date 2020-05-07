@@ -1,0 +1,1 @@
+INSERT INTO usuaris (nomUsuari, passwordc, nom, primerCognom, SegonCognom, correuElectronic) VALUES("Alberto_11", 1234, "Alberto", "Garcia", "Fernandez", "alberto_11@gmail.com");

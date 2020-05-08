@@ -1,13 +1,13 @@
 <?php
-    if(isset($_POST['userName']) && isset($_POST['passwordc'])){
-        $userName = htmlspecialchars($_POST['userName']);
+    if(isset($_POST['user_name']) && isset($_POST['passwordc'])){
+        $user_name = htmlspecialchars($_POST['user_name']);
         $password = htmlspecialchars($_POST['passwordc']);
         include_once 'connexioDB.php';
-        $sql = "SELECT * FROM usuaris WHERE nomUsuari = '" . $userName . "' AND passwordc = '" . $password . "'";
-        $usuariDB = mysqli_query($connexio, $sql);
-        if(mysqli_num_rows($usuariDB) == 1){
+        $sql = "SELECT * FROM usuaris WHERE nomUsuari = '" . $user_name . "' AND passwordc = '" . $password . "'";
+        $usuari_DB = mysqli_query($connexio, $sql);
+        if(mysqli_num_rows($usuari_DB) == 1){
             session_start();
-            $_SESSION['loginUsuari']=$userName;
+            $_SESSION['login_usuari']=$user_name;
             header("location: principal.php");
         }else{
             header("location: principal.php?login=failed");

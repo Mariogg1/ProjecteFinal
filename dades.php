@@ -9,8 +9,8 @@
     <body>
     <!--header-->
         <?php 
-            if(isset($_SESSION['loginUsuari'])){
-                include_once 'headerPeronaLogIn.php';
+            if(isset($_SESSION['login_usuari'])){
+                include_once 'headerPersonaLogIn.php';
             }else{
                 //include_once 'header.php';
             }

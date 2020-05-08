@@ -42,8 +42,8 @@
             $this->close_connection();
         }
 
-        private function inserirUsuari($usuari, $password, $email, $nom, $pCognom, $sCognom){
-            $this->query = "INSERT INTO a18margongon_proyecto.usuaris VALUES ('$usuari', '$password', '$nom', '$pCognom', '$sCognom', '$email');";
+        function inserirUsuari($usuari, $password, $email, $nom, $pCognom, $sCognom){
+            $this->query = "INSERT INTO a18margongon_proyecto.usuaris (nomUsuari, passwordc, nom, primerCognom, segonCognom, email) VALUES ('$usuari', '$password', '$nom', '$pCognom', '$sCognom', '$email');";
             $this->execute_single_query(); 
         }
 

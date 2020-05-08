@@ -5,14 +5,14 @@ function register(){
     let nom = document.getElementById("rNom").value;
     let pCognom = document.getElementById("rPCognom").value;
     let sCognom = document.getElementById("rSCognom").value;
-
-    axios.post('registre.php', {
-        'rUsuari': user,
-        'rPassword': password,
-        'rEmail': email,
-        'rNom': nom,
-        'rPCognom': pCognom,
-        'rSCognom': sCognom
+    
+    axios.post('PHP/registre.php', {
+        rUsuari: user,
+        rPassword: password,
+        rEmail: email,
+        rNom: nom,
+        rPCognom: pCognom,
+        rSCognom: sCognom
     }).then(function(response) {
         if(response.data == "Bien") {
             console.log("Usuari registrat");

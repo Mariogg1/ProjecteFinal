@@ -17,7 +17,7 @@
     }
     for($i=1;$i<=42;$i++)
         ${comarca.$i}= new comarca();
-
+	
 	foreach($data as $key=>$fila){
 		
 		if($fila->comarcacodi==01)

@@ -55,6 +55,25 @@
                 $this->query = "INSERT INTO a18nacmunana_comarques.COMARCA VALUES ($codi, '$nom', $casosConfirmatsHomes, $casosConfirmatsDones, $casosSospitososHomes, $casosSospitososDones, $casosConfirmatsTotals, $casosSospitososTotals);";
                 $this->execute_single_query(); 
             }
-        }
+            
+        function updateComarca($comarca) {
+				$codi=$comarca->codi;
+				$nom=$comarca->nom;
+				$casosConfirmatsHomes=$comarca->casosConfirmatsHomes;
+				$casosConfirmatsDones=$comarca->casosConfirmatsDones;
+				$casosSospitososHomes=$comarca->casosSospitososHomes;
+				$casosSospitososDones=$comarca->casosSospitososDones;
+				$casosConfirmatsTotals=$comarca->casosConfirmatsTotals;
+				$casosSospitososTotals=$comarca->casosSospitososTotals;
+				
+				$this->query = "update COMARCA set casosConfirmatsHomes=casosConfirmatsHomes+$casosConfirmatsHomes, casosConfirmatsDones=$casosConfirmatsDones, casosSospitososHomes=$casosSospitososHomes, casosSospitososDones=$casosSospitososDones, casosSospitososTotals=$casosSospitososTotals, casosConfirmatsTotals=$casosConfirmatsTotals where id=$codi;";
+				$this->execute_single_query(); 
+		}
+		
+		function deleteComarques() {
+				$this->query = "delete from COMARCA;";
+				$this->execute_single_query(); 
+		}
+	}
 	
 ?>

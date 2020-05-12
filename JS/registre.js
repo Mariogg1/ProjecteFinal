@@ -17,6 +17,7 @@ function register(){
     let nom = document.getElementById("registre_nom").value;
     let primer_cognom = document.getElementById("registre_primer_cognom").value;
     let segon_cognom = document.getElementById("registre_segon_cognom").value;
+
     if (user.length == '' || tiene_numeros(user.length)) {
         document.getElementById("alerta").style.display="inline";
         formulari_bien=false;
@@ -36,7 +37,7 @@ function register(){
     else if(segon_cognom.length == '' || tiene_numeros(segon_cognom.length)){
         formulari_bien=false;
     }
-    if(formulari_bien=true){
+    if(formulari_bien==true){
         axios.post('PHP/registre.php', {
             registre_usuari: user,
             registre_password: password,
@@ -52,5 +53,8 @@ function register(){
                 console.log(response.data);
             }
         });
+    }
+    else{
+        document.getElementById('modalRegistre').style.display="";
     }
 }

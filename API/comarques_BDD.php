@@ -41,6 +41,18 @@
             }
             $this->close_connection();
         }
+
+        private function get_results() {
+            $this->open_connection();
+            $result = $this->conn->query($this->query);
+
+            for($i = 0; $i < $result->num_rows; $i++) {
+                $this->rows[$i] = $result->fetch_assoc();
+            }
+
+            $result->close();
+            $this->close_connection();
+        }
         
         function insertComarca($comarca) {
 				$codi=$comarca->codi;
@@ -73,7 +85,13 @@
 		function deleteComarques() {
 				$this->query = "delete from COMARCA;";
 				$this->execute_single_query(); 
-		}
+        }
+        
+        function getInfoComarques(){
+            $this->query = "SELECT * FROM COMARCA;";
+            $this->get_results();
+            return $this->rows;
+        }
 	}
 	
 ?>

@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="JS/registre.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/index.css">
     </head>
@@ -57,13 +58,13 @@
                     <div class="modal-header">				
                         <h2 class="modal-title">Registre</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <div class="alert alert-warning" id="alerta" role="alert">
+                                This is a warning alert—check it out!
+                        </div>
                     </div>
                     <div class="modal-body">				
                         <div class="form-group">
                             <label>*Usuari</label>
-                            <div class="alert alert-warning" id="alerta" role="alert">
-                                This is a warning alert—check it out!
-                            </div>
                             <input id ="registre_usuari" type="text" class="form-control" required="required">
                         </div>
                         <div class="form-group">
@@ -91,10 +92,26 @@
                     </div>
                     <div class="modal-footer">
                             <button data-dismiss="modal" type="submit" class="btn btn-outline-dark pull-right enviar" onclick="register()">Registrar</button>
-                        </div> 
+                    </div> 
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="info">
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td>Sospitosos</td>
+                    <td>Confirmats</td>
+                </tr>
+                <tr v-for="comarca in comarques">
+                    <td>{{comarca.nom}}</td>
+                    <td>{{comarca.casosSospitososTotals}}</td>
+                    <td>{{comarca.casosConfirmatsTotals}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="JS/appVue.js"></script>
     </body>
 </html>

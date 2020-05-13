@@ -49,3 +49,11 @@ footer {
 #boton2{
     margin:-1px;
 }
+#foro{
+    margin:5px;
+}
+#salir{
+    position: absolute;
+    right: 10px;
+    top:110px;
+}

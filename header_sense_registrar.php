@@ -45,7 +45,7 @@
                         if(mysqli_num_rows($usuariDB) == 1){
                             session_start();
                             $_SESSION['login_usuari']=$userName;
-                            header("location: headerLogIn.php");
+                            header("location: header_registrat.php");
                         }else{
                             echo("No ha estat correcte");
                         }

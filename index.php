@@ -56,7 +56,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary btn-sm">More Info</a>
+                            <a href="noticies.php" class="btn btn-primary btn-sm">Més informació</a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary btn-sm">More Info</a>
+                            <a href="noticies.php" class="btn btn-primary btn-sm">Més informació</a>
                         </div>
                     </div>
                 </div>

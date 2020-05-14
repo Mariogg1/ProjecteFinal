@@ -15,7 +15,7 @@ var app = new Vue({
     },
     methods:{
         getData: function(){
-            axios.get('PHP/obtenirDades.php')
+            axios.get('php/obtenirDades.php')
             .then(response => {
                 this.comarques=response.data;
                 console.log(response.data[0].nom);

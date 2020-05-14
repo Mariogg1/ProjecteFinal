@@ -21,3 +21,39 @@ header{
 #alerta{
   display:none;
 }
+.carta2{
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: grey;
+    text-align: center;
+}
+.carta{
+    padding: 10px;
+}
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding:10px;
+    margin:5px;
+}
+#boton1{
+    margin:0px;
+}
+#boton2{
+    margin:-1px;
+}
+#foro{
+    margin:5px;
+}
+#salir{
+    position: absolute;
+    right: 10px;
+    top:110px;
+}

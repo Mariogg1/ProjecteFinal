@@ -1,5 +1,5 @@
 <?php
-    require "../API/comarques_BDD.php";
+    require "../api/comarques_BDD.php";
     $bdd = new ComarquesBDD();
     $dades = $bdd->getInfoComarques();
     

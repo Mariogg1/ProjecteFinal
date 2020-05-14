@@ -5,18 +5,100 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>COVID19</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="JS/registre.js"></script>
         <script src="JS/mapaILlistat.js"></script>
+        <script src="JS/login.js"></script>
     </head>
     <body>
-        <?php 
-            include_once 'headersAVer.php';
-        ?>
+    <header>
+    <div class="todoHeader">
+        <div>
+            <div class="titulo">
+                <h1>
+                    Informació actualizada sobre el Covid-19
+                </h1>
+            </div>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white" style="justify-content: center;">
+                <ul class="navbar-nav">
+                        <a class="nav-link" href="index.php">Mapa</a>
+                        <a class="nav-link" href="noticies.php">Noticies</a>
+                        <a class="nav-link" href="info.php">Informació</a>
+                        <a class="nav-link" href="foro.php">Foro</a>
+                </ul>
+            </nav>
+        </div>
+            <!--Final navbar-->
+            <!--Formulario-->
+        <form method="post" id="formulario">
+            <div class="formulario">
+                <div>
+                    <input type="text" placeholder="User name"  name="user_name">
+                </div>
+                <div>
+                    <div >
+                        <input type="password" placeholder="Password" name="passwordc">
+                    </div>
+                </div>
+                <div class="boton">
+                    <button type="submit" id="envia" onclick="login()">Envia</button>
+                    <button type="button" data-toggle="modal" data-target="#modalRegistre">Registra't</button>
+                </div>
+                </div>
+        </form>
+            <!--Final formulario-->
+    </div>
+    <div class="modal fade" id="modalRegistre">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">				
+                    <h2 class="modal-title">Registre</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">	
+                    <div class="alert alert-warning" role="alert" id="alerta">
+                        Les dades no estan bé
+                    </div>			
+                    <div class="form-group">
+                        <label>*Usuari</label>
+                        <input id ="registre_usuari" type="text" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <div class="clearfix">
+                            <label>*Clau</label>
+                        </div>
+                        <input id ="registre_password" type="password" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>*Email</label>
+                        <input id ="registre_email" type="email" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>*Nom</label>
+                        <input id ="registre_nom" type="text" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>*Primer Cognom</label>
+                        <input id ="registre_primer_cognom" type="text" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>*Segon Cognom</label>
+                        <input id ="registre_segon_cognom"type="text" class="form-control" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button data-dismiss="modal" type="submit" class="btn btn-outline-dark pull-right enviar" onclick="register()">Registrar</button>
+                </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
         <div class="container">
             <div class="carta">
                 <div class="carta2">
@@ -25,11 +107,11 @@
             </div>
             <div class="row align-items-center my-5">
                 <div class="col-lg-7">
-                    <button type="button" class="btn btn-secondary" id="boton1" onclick="veureMapa();">Mapa</button>
-                    <button type="button" class="btn btn-secondary" id="boton2" onclick="veureLlistat();">Llistat</button>
+                    <button type="button" class="btn btn-secondary" id="boton1" onclick="veureMapa()">Mapa</button>
+                    <button type="button" class="btn btn-secondary" id="boton2" onclick="veureLlistat()">Llistat</button>
                     <img class="img-fluid rounded mb-2 mb-lg-0" src="fotos/catalunyacomarques.jpg" id="mapa" alt="foto de catalunya">
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5" id="targetaMapa">
                     <h1 class="font-weight-light">Titulo</h1>
                     <p>Informació a afegir</p>
                 </div>

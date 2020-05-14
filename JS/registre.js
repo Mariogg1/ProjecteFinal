@@ -37,7 +37,7 @@ function register(){
         formulari_bien=false;
     }
     if(formulari_bien==true){
-        axios.post('php/registre.php', {
+        axios.post('PHP/registre.php', {
             registre_usuari: user,
             registre_password: password,
             registre_email: email,
@@ -51,7 +51,7 @@ function register(){
             else {
                 console.log(response.data);
             }
-        });
+        }).catch(error => console.error(error));;
     }
     else{
         document.getElementById("alerta").style.display="block";

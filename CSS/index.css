@@ -43,6 +43,9 @@ footer {
     padding:10px;
     margin:5px;
 }
+#info{
+    display: none;
+}
 #boton1{
     margin:0px;
 }

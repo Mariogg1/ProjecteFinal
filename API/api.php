@@ -1,11 +1,16 @@
 <?php
 	require "comarques_BDD.php";
 	require "dades_BDD.php";
+	
+	echo "$db_host\n";
+	echo "$db_user\n";
+	echo "$db_pass\n";
+	echo "$db_name\n";
 	$url="http://analisi.transparenciacatalunya.cat/resource/jj6z-iyrp.json?\$limit=7500000";
 
 	$data=json_decode(file_get_contents($url));
 	
-	$tipus=$_POST['tipus'];
+	$tipus=1;
 	
 	class comarca{
 		public $codi=0;
@@ -89,7 +94,7 @@
 				}
 			}
 		}
-		$bdd = new ComarquesBDD();
+		$bdd = new ComarquesBDD($db_host, $db_user, $db_pass, $db_name);
 		$bdd->deleteComarques();
 		for($i=1;$i<=42;$i++){
 			echo $i."\n";

@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>COVID19</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/registre.js"></script>
-        <script src="js/mapaILlistat.js"></script>
+        <script src="JS/registre.js"></script>
+        <script src="JS/mapaILlistat.js"></script>
     </head>
     <body>
         <?php 
@@ -35,18 +35,34 @@
                 </div>
             </div>
             <div id="info">
-                <table>
-                    <tr>
-                        <td>Nom</td>
-                        <td>Sospitosos</td>
-                        <td>Confirmats</td>
-                    </tr>
-                    <tr v-for="comarca in comarques">
-                        <td>{{comarca.nom}}</td>
-                        <td>{{comarca.casosSospitososTotals}}</td>
-                        <td>{{comarca.casosConfirmatsTotals}}</td>
-                    </tr>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Sospitosos</th>
+                            <th>Confirmats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(comarca, i) in comarques" v-if="(pag - 1) * perPag <= i  && pag * perPag > i">
+                            <th class="table-active">{{comarca.id}}</th>
+                            <th>{{comarca.nom}}</th>
+                            <th>{{comarca.casosSospitososTotals}}</th>
+                            <th>{{comarca.casosConfirmatsTotals}}</th>
+                        </tr>
+                    </tbody>
                 </table>
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <button type="button" class="btn btn-secondary" v-if="pag != 1" @click.prevent="pag -= 1">Anterior</button>
+                        </li>
+                        <li>
+                        <button type="button" class="btn btn-secondary" v-if="pag * perPag / comarques.length < 1" @click.prevent="pag += 1">Següent</button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-5">
@@ -73,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <script src="js/appVue.js"></script>
+        <script src="JS/appVue.js"></script>
         <footer>
             <div>© 2020 Copyright:
                 <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>

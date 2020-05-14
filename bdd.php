@@ -11,11 +11,11 @@
         private $conn;
 
         // Proporciona configuración de MySQL
-        function __construct() {
-            self::$db_host = "labs.iam.cat";
-            self::$db_user = "a18margongon_a18";
-            self::$db_pass = "proyectofinal";
-            self::$db_name = "a18margongon_proyecto";
+        function __construct($db_host, $db_user, $db_pass, $db_name) {
+            self::$db_host = $db_host;
+            self::$db_user = $db_user;
+            self::$db_pass = $db_pass;
+            self::$db_name = $db_name;
         }
 
         private function open_connection() {

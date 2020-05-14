@@ -1,12 +1,14 @@
 <?php
    require "../bdd.php";
+   require "../dades_BDD.php";
+   
    $_POST = json_decode(file_get_contents("php://input"),true);
 
    if (!isset($_POST['registre_usuari'], $_POST['registre_password'], $_POST['registre_email'], $_POST['registre_nom'], $_POST['registre_primer_cognom'], $_POST['registre_segon_cognom'])) {
       die ('Emplena tots els camps');
    }
 
-   $bdd = new BDD();
+   $bdd = new BDD($db_host, $db_user, $db_pass, $db_name);
    $bdd->inserirUsuari($_POST['registre_usuari'], $_POST['registre_password'], $_POST['registre_email'], $_POST['registre_nom'], $_POST['registre_primer_cognom'], $_POST['registre_segon_cognom']);
    
 ?>

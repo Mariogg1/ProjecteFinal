@@ -1,5 +1,6 @@
 <?php
 	require "comarques_BDD.php";
+	require "dades_BDD.php";
 	$url="http://analisi.transparenciacatalunya.cat/resource/jj6z-iyrp.json?\$limit=7500000";
 
 	$data=json_decode(file_get_contents($url));
@@ -164,7 +165,7 @@
 				}
 			}
 		}
-		$bdd = new ComarquesBDD();
+		$bdd = new ComarquesBDD($db_host, $db_user, $db_pass, $db_name);
 		for($i=1;$i<=42;$i++){
 			if(${comarca.$i}->codi!=0){
 				echo $i."\n";

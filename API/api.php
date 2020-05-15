@@ -1,11 +1,7 @@
 <?php
-	require "comarques_BDD.php";
 	require "dades_BDD.php";
+	require "comarques_BDD.php";
 	
-	echo "$db_host\n";
-	echo "$db_user\n";
-	echo "$db_pass\n";
-	echo "$db_name\n";
 	$url="http://analisi.transparenciacatalunya.cat/resource/jj6z-iyrp.json?\$limit=7500000";
 
 	$data=json_decode(file_get_contents($url));
@@ -24,12 +20,12 @@
     }
         
     if($tipus==1)
-		emplena_BDD($data);
+		emplena_BDD($data, $db_host, $db_user, $db_pass, $db_name);
 	
 	else
-		actulitza_BDD($data);
+		actulitza_BDD($data, $db_host, $db_user, $db_pass, $db_name);
 	
-	function emplena_BDD ($data){
+	function emplena_BDD ($data, $db_host, $db_user, $db_pass, $db_name){
 		
 		for($i=1;$i<=42;$i++)
 			${comarca.$i}= new comarca;
@@ -103,7 +99,7 @@
 		}
 	}
 	
-	function actulitza_BDD($data){			
+	function actulitza_BDD($data, $db_host, $db_user, $db_pass, $db_name){			
 		$fecha=date("Y-m-d",strtotime("- 1 days"));
 		
 		for($i=1;$i<=42;$i++)

@@ -37,7 +37,7 @@
             if($this->conn->query($this->query)) {
                 echo "Bien";
             } else {
-                echo "Mal";
+                echo "Mal ".$this->conn->error."\n";
             }
             $this->close_connection();
         }
@@ -63,6 +63,9 @@
 				$casosSospitososDones=$comarca->casosSospitososDones;
 				$casosConfirmatsTotals=$comarca->casosConfirmatsTotals;
 				$casosSospitososTotals=$comarca->casosSospitososTotals;
+				if(strpos($nom, "'")){
+					$nom=str_replace("'", "\'", $nom);
+				}
 				
                 $this->query = "INSERT INTO a18nacmunana_comarques.COMARCA VALUES ($codi, '$nom', $casosConfirmatsHomes, $casosConfirmatsDones, $casosSospitososHomes, $casosSospitososDones, $casosConfirmatsTotals, $casosSospitososTotals);";
                 $this->execute_single_query(); 
@@ -77,6 +80,10 @@
 				$casosSospitososDones=$comarca->casosSospitososDones;
 				$casosConfirmatsTotals=$comarca->casosConfirmatsTotals;
 				$casosSospitososTotals=$comarca->casosSospitososTotals;
+				
+				if(strpos($nom, "'")){
+					$nom=str_replace("'", "\'", $nom);
+				}
 				
 				$this->query = "update COMARCA set casosConfirmatsHomes=casosConfirmatsHomes+$casosConfirmatsHomes, casosConfirmatsDones=$casosConfirmatsDones, casosSospitososHomes=$casosSospitososHomes, casosSospitososDones=$casosSospitososDones, casosSospitososTotals=$casosSospitososTotals, casosConfirmatsTotals=$casosConfirmatsTotals where id=$codi;";
 				$this->execute_single_query(); 

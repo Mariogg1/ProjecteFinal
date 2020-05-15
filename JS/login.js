@@ -3,7 +3,7 @@ function login() {
     let password = document.getElementsByName('passwordc').value;
     console.log(user, password);
   
-    axios.post('PHP/login.php', {
+    axios.post('php/login.php', {
         usuari: user,
         passwd: password,
     }).then(function(response) {

@@ -10,17 +10,8 @@
     </head>
     <body>
         <?php
-            include_once 'header_registrat.php';
+            include_once 'header_sense_registrar.php';
         ?>
-        <form>
-            <div class="form-group row" id="foro">
-            <div class="col-md-2"></div>
-                <div class="col-md-7">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Posa el teu comentari: ">
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-        </form>
-        <hr/>
+        <a>No es pot obrir sense fer login</a>
     </body>
 </html>

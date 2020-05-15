@@ -10,9 +10,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="JS/registre.js"></script>
-        <script src="JS/mapaILlistat.js"></script>
-        <script src="JS/login.js"></script>
+        <script src="js/registre.js"></script>
+        <script src="js/mapaILlistat.js"></script>
+        <script src="js/login.js"></script>
     </head>
     <body>
     <header>
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-        <script src="JS/appVue.js"></script>
+        <script src="js/appVue.js"></script>
         <footer>
             <div>© 2020 Copyright:
                 <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>

@@ -29,29 +29,10 @@
                     </div>
                 </div>
                 <div class="boton">
-                    <button type="submit" id="envia">Envia</button>
+                    <button type="submit" id="envia" onclick="login()">Envia</button>
                     <button type="button" data-toggle="modal" data-target="#modalRegistre">Registra't</button>
                 </div>
-                <?php
-                    if(isset($_POST['user_name']) && isset($_POST['passwordc'])){
-                        $userName = $_POST['user_name'];
-                        $contrasenya = $_POST['passwordc'];
-                        include_once 'connexioDB.php';
-
-                        $sql = "SELECT * FROM usuaris WHERE nomUsuari = '" . $userName . "' AND passwordc = '" . $contrasenya . "'";
-
-                        $usuariDB = mysqli_query($connexio, $sql);
-
-                        if(mysqli_num_rows($usuariDB) == 1){
-                            session_start();
-                            $_SESSION['login_usuari']=$userName;
-                            header("location: header_registrat.php");
-                        }else{
-                            echo("No ha estat correcte");
-                        }
-                    }else{
-                ?>
-            </div>
+                </div>
         </form>
             <!--Final formulario-->
     </div>
@@ -101,6 +82,3 @@
         </div>
     </div>
 </header>
-<?php
-}
-?>

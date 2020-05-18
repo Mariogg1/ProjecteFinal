@@ -10,9 +10,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="JS/snap.svg-min.js"></script>
         <script src="JS/registre.js"></script>
         <script src="JS/mapaILlistat.js"></script>
         <script src="JS/login.js"></script>
+        <script src="JS/mapaInteractivo.js"></script>
     </head>
     <body>
     <header>
@@ -109,7 +111,8 @@
                 <div class="col-lg-7">
                     <button type="button" class="btn btn-secondary" id="boton1" onclick="veureMapa()">Mapa</button>
                     <button type="button" class="btn btn-secondary" id="boton2" onclick="veureLlistat()">Llistat</button>
-                    <img class="img-fluid rounded mb-2 mb-lg-0" src="fotos/catalunyacomarques.jpg" id="mapa" alt="foto de catalunya">
+                    <svg id="mapa"></svg>
+                   <!-- <img class="img-fluid rounded mb-2 mb-lg-0" src="fotos/catalunyacomarques.jpg" id="mapa" alt="foto de catalunya">-->
                 </div>
                 <div class="col-lg-5" id="targetaMapa">
                     <h1 class="font-weight-light">Titulo</h1>

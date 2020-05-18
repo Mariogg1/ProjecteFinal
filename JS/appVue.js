@@ -4,6 +4,7 @@ var app = new Vue({
         comarques: null,
         pag: 1,
         perPag: 10,
+        comarcaActual: null
     },
     created: function (){
         this.getData();
@@ -18,8 +19,10 @@ var app = new Vue({
                 this.comarques=response.data;
             })
             .catch(error => console.error(error));
+        },
+        setComarcaActual: function(comarca){
+            this.comarcaActual=this.comarques[comarca];
         }
 
     }
 });
-

@@ -1,16 +1,12 @@
 var app = new Vue({
-    el:'#info',
+    el:'#taula',
     data: {
-        comarques: null,
+        comarques: 0,
         pag: 1,
         perPag: 10,
-        comarcaActual: null
     },
     created: function (){
         this.getData();
-    },
-    mounted: function (){
-
     },
     methods:{
         getData: function(){
@@ -20,9 +16,17 @@ var app = new Vue({
             })
             .catch(error => console.error(error));
         },
-        setComarcaActual: function(comarca){
-            this.comarcaActual=this.comarques[comarca];
-        }
+    }
+});
 
+var app2 = new Vue({
+    el:'#targetaMapa',
+    data: {
+        comarcaActual: 0
+    },
+    methods:{
+        setComarcaActual: function(comarca){
+            this.comarcaActual=app.comarques[comarca];
+        }
     }
 });

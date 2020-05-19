@@ -14,7 +14,6 @@
         <script src="JS/registre.js"></script>
         <script src="JS/mapaILlistat.js"></script>
         <script src="JS/login.js"></script>
-        <script src="JS/mapaInteractivo.js"></script>
     </head>
     <body>
         <?php
@@ -47,18 +46,18 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{comarcaActual.casosConfirmatsHomes}}</td>
+                            <td>{{comarcaActual.casosSospitososHomes}}</td>
+                            <td>{{comarcaActual.casosConfirmatsDones}}</td>
+                            <td>{{comarcaActual.casosSospitososDones}}</td>
+                            <td>{{comarcaActual.casosConfirmatsTotals}}</td>
+                            <td>{{comarcaActual.casosSospitososTotals}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div id="info">
+            <div id="taula">
                 <table class="table table-hover">
                     <thead class="thead-dark">
                         <tr>
@@ -114,6 +113,7 @@
             </div>
         </div>
         <script src="JS/appVue.js"></script>
+        <script src="JS/mapaInteractivo.js"></script>
         <footer>
             <div>© 2020 Copyright:
                 <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>

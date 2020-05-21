@@ -48,7 +48,7 @@
         }
 
         function comprovaLogin($usuari, $password){
-            $this->query="SELECT * FROM a18margongon_proyecto.usuaris WHERE nomUsuari='$usuari' AND passwordc='$password;";
+            $this->query="SELECT * FROM a18margongon_proyecto.usuaris WHERE nomUsuari='$usuari' AND passwordc='$password';";
             $this->open_connection();
             $result = $this->conn->query($this->query);
             if($result->num_rows > 0) {

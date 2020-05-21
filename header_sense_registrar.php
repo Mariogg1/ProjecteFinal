@@ -18,18 +18,18 @@
         </div>
             <!--Final navbar-->
             <!--Formulario-->
-        <form method="post" id="formulario">
+        <form>
             <div class="formulario">
                 <div>
-                    <input type="text" placeholder="User name"  name="user_name">
+                    <input id="login_name" type="text" placeholder="User name" required="required">
                 </div>
                 <div>
                     <div >
-                        <input type="password" placeholder="Password" name="passwordc">
+                        <input id="login_passwrd" type="password" placeholder="Password" required="required">
                     </div>
                 </div>
                 <div class="boton">
-                    <button type="submit" id="envia" onclick="login()">Envia</button>
+                    <button type="button" id="envia" onclick="login()">Envia</button>
                     <button type="button" data-toggle="modal" data-target="#modalRegistre">Registra't</button>
                 </div>
                 </div>

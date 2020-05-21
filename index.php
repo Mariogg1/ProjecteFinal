@@ -34,6 +34,7 @@
                    <!-- <img class="img-fluid rounded mb-2 mb-lg-0" src="fotos/catalunyacomarques.jpg" id="mapa" alt="foto de catalunya">-->
                 </div>
                 <div class="col-lg-7" id="targetaMapa">
+                    <h2>{{comarcaActual.nom}}</h2>
                     <table class="table table-striped">
                         <thead>
                             <tr>

@@ -11,9 +11,6 @@ function login() {
                 icon: 'success',
                 title: 'Has iniciat sessió!',
               })
-              document.getElementById("loginform").style.display="none";
-              document.getElementById("modalRegistre").style.display="none";
-              document.getElementById("salir").style.display="block";
         } 
         else {
             Swal.fire({

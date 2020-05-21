@@ -47,6 +47,11 @@
             $this->execute_single_query(); 
         }
 
+        function inserirComentari($comentari){
+            $this->query = "INSERT INTO a18margongon_proyecto.comentaris (comentari) VALUES ('$comentari');";
+            $this->execute_single_query();
+        }
+
         function comprovaLogin($usuari, $password){
             $this->query="SELECT * FROM a18margongon_proyecto.usuaris WHERE nomUsuari='$usuari' AND passwordc='$password';";
             $this->open_connection();

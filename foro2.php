@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
+<head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>COVID19</title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="CSS/index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="JS/comentaris.js"></script>
     </head>
     <body>
         <?php
@@ -16,9 +21,9 @@
             <div class="form-group row" id="foro">
             <div class="col-md-2"></div>
                 <div class="col-md-7">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Posa el teu comentari: ">
+                    <input id="registre_comentari" type="text" class="form-control" placeholder="Posa el teu comentari: ">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary" id="botonforo" onclick="comentari()">Sign in</button>
             </div>
         </form>
         <hr/>

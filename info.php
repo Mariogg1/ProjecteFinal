@@ -48,7 +48,7 @@
                             Mal de coll
                         </li>
                         <li>
-                            Pèrdua de el sentit de l'gust o de l'olfacte
+                            Pèrdua del sentit del gust o de l'olfacte
                         </li>
                         <li>
                             Mal de cap

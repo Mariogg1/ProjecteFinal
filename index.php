@@ -89,30 +89,6 @@
                     </ul>
                 </nav>
             </div>
-            <div class="row">
-                <div class="col-md-6 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title">Noticia 1</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="noticies.php" class="btn btn-primary btn-sm">Més informació</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title">Noticia 2</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="noticies.php" class="btn btn-primary btn-sm">Més informació</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <script src="JS/appVue.js"></script>
         <script src="JS/mapaInteractivo.js"></script>

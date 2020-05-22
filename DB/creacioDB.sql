@@ -23,7 +23,7 @@ CREATE TABLE comentaris(
 );
 
 CREATE TABLE SospitososAPI(
-    numCasos INT (10) AUTO_INCREMENT PRIMARY KEY,
+    id INT (10) AUTO_INCREMENT PRIMARY KEY,
     sexe VARCHAR (10) NOT NULL,
     comarca VARCHAR (30) NOT NULL
 );

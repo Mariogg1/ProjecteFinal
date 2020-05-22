@@ -17,6 +17,11 @@ function veureCoincidencies(){
     if(resultat<=2){
         alert("res");
     }else{
-        alert("comarca: "+comarca+"<br> sexe: "+sexe);
+        axios.post('api.php/records/SospitososAPI', {
+            sexe: sexe,
+            comarca: comarca,
+        }).then(function(response) {
+                console.log("cas registrat: "+ response.data);
+        }).catch(error => console.error(error));;
     }
 }

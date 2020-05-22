@@ -10,9 +10,9 @@ var app = new Vue({
     },
     methods:{
         getData: function(){
-            axios.get('PHP/obtenirDades.php')
+            axios.get('api.php/records/COMARCA')
             .then(response => {
-                this.comarques=response.data;
+                this.comarques=response.data.records;
             })
             .catch(error => console.error(error));
         },

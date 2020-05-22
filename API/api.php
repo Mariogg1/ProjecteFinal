@@ -1,5 +1,5 @@
 <?php
-	require "dades_BDD.php";
+	require "../dades_BDD.php";
 	require "comarques_BDD.php";
 	
 	$url="http://analisi.transparenciacatalunya.cat/resource/jj6z-iyrp.json?\$limit=7500000";
@@ -69,23 +69,23 @@
 				${comarca.$cod}->nom = $fila->comarcadescripcio;
 				${comarca.$cod}->codi = $fila->comarcacodi;
 				if($fila->sexecodi==1){
-					if (strcmp($fila->resultatcoviddescripcio, 'Positiu')==0){
-						${comarca.$cod}->casosConfirmatsDones+=$fila->numcasos;
-						${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
-					}
-					else{
+					if (strcmp($fila->resultatcoviddescripcio, 'Sospitós')==0){
 						${comarca.$cod}->casosSospitososDones+=$fila->numcasos;
 						${comarca.$cod}->casosSospitososTotals+=$fila->numcasos;
 					}
-				}
-				else{
-					if (strcmp($fila->resultatcoviddescripcio, 'Positiu')==0){
-						${comarca.$cod}->casosConfirmatsHomes+=$fila->numcasos;
+					else{
+						${comarca.$cod}->casosConfirmatsDones+=$fila->numcasos;
 						${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
 					}
-					else{
+				}
+				else{
+					if (strcmp($fila->resultatcoviddescripcio, 'Sospitós')==0){
 						${comarca.$cod}->casosSospitososHomes+=$fila->numcasos;
 						${comarca.$cod}->casosSospitososTotals+=$fila->numcasos;
+					}
+					else{
+						${comarca.$cod}->casosConfirmatsHomes+=$fila->numcasos;
+						${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
 					}
 				}
 			}

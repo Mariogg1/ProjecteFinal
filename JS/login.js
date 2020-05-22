@@ -10,7 +10,11 @@ function login() {
             Swal.fire({
                 icon: 'success',
                 title: 'Has iniciat sessió!',
-              })
+              }).then((result) => {
+                if (result.value) {
+                    location.reload();
+                }
+            })
         } 
         else {
             Swal.fire({

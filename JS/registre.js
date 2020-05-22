@@ -13,7 +13,7 @@ function register(){
     let formulari_bien=true;
     let user = document.getElementById("registre_usuari").value;
     let password = document.getElementById("registre_password").value;
-    let email = document.getElementById("registre_email").value;
+    let correu = document.getElementById("registre_email").value;
     let nom = document.getElementById("registre_nom").value;
     let primer_cognom = document.getElementById("registre_primer_cognom").value;
     let segon_cognom = document.getElementById("registre_segon_cognom").value;
@@ -24,7 +24,7 @@ function register(){
     else if(password.length == ''){
         formulari_bien=false;
     }
-    else if(email.length == ''){
+    else if(correu.length == ''){
         formulari_bien=false;
     }
     else if(nom.length == '' || tiene_numeros(nom.length)){
@@ -37,20 +37,15 @@ function register(){
         formulari_bien=false;
     }
     if(formulari_bien==true){
-        axios.post('PHP/registre.php', {
-            registre_usuari: user,
-            registre_password: password,
-            registre_email: email,
-            registre_nom: nom,
-            registre_primer_cognom: primer_cognom,
-            registre_segon_cognom: segon_cognom
+        axios.post('api.php/records/usuaris', {
+            nomUsuari: user,
+            passwordc: password,
+            nom: nom,
+            primerCognom: primer_cognom,
+            segonCognom: segon_cognom,
+            email: correu
         }).then(function(response) {
-            if(response.data == "Bien") {
-                console.log("Usuari registrat");
-            } 
-            else {
-                console.log(response.data);
-            }
+                console.log("Usuari registrat amb id="+ response.data);
         }).catch(error => console.error(error));;
     }
     else{

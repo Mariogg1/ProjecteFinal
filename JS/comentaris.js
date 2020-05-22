@@ -6,7 +6,7 @@ function comentari(){
     }).then(function(response) {
         alert(registre_comentari);
         if(response.data == "Bien") {
-            console.log("Comentari afegir");
+            alert("Comentari afegir");
         } 
         else {
             console.log(response.data);

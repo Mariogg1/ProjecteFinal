@@ -157,9 +157,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="(SospitososAPI, i) in comarcaAPI">
-                        <th>{{SospitososAPI.comarca}}</th>
-                        <th>{{SospitososAPI.sexe}}</th>
+                    <tr v-for="(comarca, i) in comarcas">
+                        <th>{{comarca}}</th>
+                        <th>{{comarcas.sexe}}</th>
+                        <th>{{comarca.sexe}}</th>
                         </tr>
                     </tbody>
                 </table>

@@ -112,3 +112,7 @@ footer {
 .page-item {
     margin: 5px;
 }
+
+#tablaSospitososAPI{
+    display:none;
+}

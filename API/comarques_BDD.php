@@ -85,7 +85,7 @@
 					$nom=str_replace("'", "\'", $nom);
 				}
 				
-				$this->query = "update COMARCA set casosConfirmatsHomes=casosConfirmatsHomes+$casosConfirmatsHomes, casosConfirmatsDones=$casosConfirmatsDones, casosSospitososHomes=$casosSospitososHomes, casosSospitososDones=$casosSospitososDones, casosSospitososTotals=$casosSospitososTotals, casosConfirmatsTotals=$casosConfirmatsTotals where id=$codi;";
+				$this->query = "update COMARCA set casosConfirmatsHomes=casosConfirmatsHomes+$casosConfirmatsHomes, casosConfirmatsDones=casosConfirmatsDones+$casosConfirmatsDones, casosSospitososHomes=casosSospitososHomes+$casosSospitososHomes, casosSospitososDones=casosSospitososDones+$casosSospitososDones, casosSospitososTotals=casosSospitososTotals+$casosSospitososTotals, casosConfirmatsTotals=casosConfirmatsTotals+$casosConfirmatsTotals where id=$codi;";
 				$this->execute_single_query(); 
 		}
 		

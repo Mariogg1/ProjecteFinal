@@ -1,12 +1,12 @@
 <?php
-	require "../dades_BDD.php";
+	require "dades_BDD.php";
 	require "comarques_BDD.php";
 	
 	$url="http://analisi.transparenciacatalunya.cat/resource/jj6z-iyrp.json?\$limit=7500000";
 
 	$data=json_decode(file_get_contents($url));
 	
-	$tipus=1;
+	$tipus=0;
 	
 	class comarca{
 		public $codi=0;
@@ -19,11 +19,14 @@
 		public $casosSospitososTotals=0;
     }
         
-    if($tipus==1)
+    if($tipus==1){
 		emplena_BDD($data, $db_host, $db_user, $db_pass, $db_name);
+	}
 	
-	else
+	else{
+		echo"hola";
 		actulitza_BDD($data, $db_host, $db_user, $db_pass, $db_name);
+	}
 	
 	function emplena_BDD ($data, $db_host, $db_user, $db_pass, $db_name){
 		
@@ -101,7 +104,7 @@
 	
 	function actulitza_BDD($data, $db_host, $db_user, $db_pass, $db_name){			
 		$fecha=date("Y-m-d",strtotime("- 1 days"));
-		
+
 		for($i=1;$i<=42;$i++)
 			${comarca.$i}= new comarca;
 			
@@ -144,23 +147,23 @@
 					${comarca.$cod}->nom = $fila->comarcadescripcio;
 					${comarca.$cod}->codi = $fila->comarcacodi;
 					if($fila->sexecodi==1){
-						if (strcmp($fila->resultatcoviddescripcio, 'Positiu')==0){
-							${comarca.$cod}->casosConfirmatsDones+=$fila->numcasos;
-							${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
-						}
-						else{
+						if (strcmp($fila->resultatcoviddescripcio, 'Sospitós')==0){
 							${comarca.$cod}->casosSospitososDones+=$fila->numcasos;
 							${comarca.$cod}->casosSospitososTotals+=$fila->numcasos;
 						}
-					}
-					else{
-						if (strcmp($fila->resultatcoviddescripcio, 'Positiu')==0){
-							${comarca.$cod}->casosConfirmatsHomes+=$fila->numcasos;
+						else{
+							${comarca.$cod}->casosConfirmatsDones+=$fila->numcasos;
 							${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
 						}
-						else{
+					}
+					else{
+						if (strcmp($fila->resultatcoviddescripcio, 'Sospitós')==0){
 							${comarca.$cod}->casosSospitososHomes+=$fila->numcasos;
 							${comarca.$cod}->casosSospitososTotals+=$fila->numcasos;
+						}
+						else{
+							${comarca.$cod}->casosConfirmatsHomes+=$fila->numcasos;
+							${comarca.$cod}->casosConfirmatsTotals+=$fila->numcasos;
 						}
 					}
 				}

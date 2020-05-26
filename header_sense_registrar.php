@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="boton">
-                    <button type="button" id="envia" onclick="login()">Envia</button>
+                    <button type="button" id="envia" onclick="login()">Login</button>
                     <button type="button" data-toggle="modal" data-target="#modalRegistre">Registra't</button>
                 </div>
                 </div>

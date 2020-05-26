@@ -108,3 +108,7 @@ footer {
 #fons{
     fill:white;
 }
+
+.page-item {
+    margin: 5px;
+}

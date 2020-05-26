@@ -145,26 +145,40 @@
                 <button type="submit" class="btn btn-primary" onclick="veureCoincidencies()">Envia</button>
             </div>
         </div>
-        <div class="row" id="tablaSospitososAPI">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-11">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                        <th scope="col">Comarca</th>
-                        <th scope="col">Homes sospitosos</th>
-                        <th scope="col">Dones sospitoses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="(comarca, i) in comarcas">
-                        <th>{{comarca}}</th>
-                        <th>{{comarcas.sexe}}</th>
-                        <th>{{comarca.sexe}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> 
+        <div class="container">
+            <div class="row" id="tablaSospitososAPI">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-11">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Comarca</th>
+                                <th scope="col">Homes sospitosos</th>
+                                <th scope="col">Dones sospitoses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(comarca, i) in comarcas" v-if="(pag - 1) * perPag <= i  && pag * perPag > i">
+                            <th class="table-active">{{i+1}}</th>
+                            <th>{{comarca.nom}}</th>
+                            <th>{{comarca.homes}}</th>
+                            <th>{{comarca.dones}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <button type="button" class="btn btn-secondary" v-if="pag != 1" @click.prevent="pag -= 1">Anterior</button>
+                            </li>
+                            <li class="page-item">
+                            <button type="button" class="btn btn-secondary" v-if="pag * perPag / comarcas.length < 1" @click.prevent="pag += 1">Següent</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> 
+            </div>
         </div>
         <footer>
             <div>© 2020 Copyright:

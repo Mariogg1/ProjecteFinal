@@ -17,10 +17,14 @@ var app = new Vue({
             for(let i=0; i<this.comarcas.length; i++){
                 axios.get(`api.php/records/SospitososAPI?filter=comarca,eq,${this.comarcas[i]}`)
                 .then(response => {
-                    console.log(response.data.records);
                     this.comarcaAPI+=response.data.records;
                 })
                 .catch(error => console.error(error));
+            }
+        },
+        contaCasos: function(){
+            for(let i=0; i<this.comarcaAPI.length; i++){
+
             }
         },
     }

@@ -17,7 +17,7 @@
     <?php
             include_once 'header_registrat.php';
         ?>
-        <div class="row">
+        <div class="row" id="questionari">
             <div class="col-sm-1"></div>
             <div class="col-sm-11">
                 <div>
@@ -145,10 +145,31 @@
                 <button type="submit" class="btn btn-primary" onclick="veureCoincidencies()">Envia</button>
             </div>
         </div>
+        <div class="row" id="tablaSospitososAPI">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">Comarca</th>
+                        <th scope="col">Homes sospitosos</th>
+                        <th scope="col">Dones sospitoses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(SospitososAPI, i) in comarcaAPI">
+                        <th>{{SospitososAPI.comarca}}</th>
+                        <th>{{SospitososAPI.sexe}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+        </div>
         <footer>
             <div>© 2020 Copyright:
                 <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
             </div>
         </footer>
+        <script src="JS/SospitososVUE.js"></script>
     </body>
 </html>

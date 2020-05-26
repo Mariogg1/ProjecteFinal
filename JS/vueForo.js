@@ -15,6 +15,8 @@ var app = new Vue({
                 this.coments=response.data.records.reverse();
             })
             .catch(error => console.error(error));
+            document.getElementById("tablaSospitososAPI").style.display="block";
+            document.getElementById("questionari").style.display="none";
         },
     }
 });

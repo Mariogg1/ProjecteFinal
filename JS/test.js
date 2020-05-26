@@ -22,6 +22,8 @@ function veureCoincidencies(){
             comarca: comarca,
         }).then(function(response) {
                 console.log("cas registrat: "+ response.data);
-        }).catch(error => console.error(error));;
+        }).catch(error => console.error(error));
     }
+    document.getElementById("tablaSospitososAPI").style.display="block";
+    document.getElementById("questionari").style.display="none";
 }

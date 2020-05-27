@@ -1,7 +1,6 @@
 var app = new Vue({
     el:'#tablaSospitososAPI',
     data: {
-        results: 0,
         comarcas:[
             {nom:"Alt Camp", homes:0, dones:0},
             {nom:"Alt Empordà", homes:0, dones:0},
@@ -64,10 +63,18 @@ var app = new Vue({
                             else
                                 this.comarcas[i].dones+=1;
                         }
-                        this.results+=response.data.records;
                     }
                 })
                 .catch(error => console.error(error));
+            }
+        },
+        sumaCas: function(comarca, sexe){
+            for (let i = 0; i < this.comarcas.length; i++) {
+                if(this.comarcas[i].nom==comarca)
+                    if(sexe=="Dona")
+                        this.comarcas[i].dones++;                   
+                    else
+                        this.comarcas[i].homes++;
             }
         }
     }

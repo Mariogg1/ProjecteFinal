@@ -18,8 +18,8 @@
             include_once 'header_registrat.php';
         ?>
         <div class="row" id="questionari">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-11">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-7" id="tablatest">
                 <div>
                     <h3>1. Has viatjat fora d'Espanya en aquests ultims mesos?</h3>
                     <div class="custom-control custom-radio custom-control-inline">
@@ -88,7 +88,7 @@
                             <option>Alt Empordà</option>
                             <option>Alt Penedès</option>
                             <option>Alt Urgell </option>
-                            <option>Alta Ribargorça</option>
+                            <option>Alta Ribagorça</option>
                             <option>Anoia</option>
                             <option>Aran</option>
                             <option>Bages</option>

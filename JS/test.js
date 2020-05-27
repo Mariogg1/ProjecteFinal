@@ -15,8 +15,18 @@ function veureCoincidencies(){
     resultat=p1+p2+p3+p4+p5;
     comarca=document.getElementById("inputState").value;
     if(resultat<=2){
-        alert("res");
-    }else{
+        Swal.fire({
+            title: 'No sembla ser un cas positiu',
+            text: 'Per a més informació pots trucar al 061'
+        })    
+    }
+    else{
+        app.sumaCas(comarca, sexe);
+        Swal.fire({
+            icon: 'warning',
+            title: 'Podríes ser un cas positiu!',
+            text: 'Hauries de trucar al 061'
+          })
         axios.post('api.php/records/SospitososAPI', {
             sexe: sexe,
             comarca: comarca,

@@ -149,6 +149,8 @@
             <div class="row" id="tablaSospitososAPI">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-11">
+                    <h1>Casos detectats: {{numCasos}}</h1>
+                    <hr/>
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>

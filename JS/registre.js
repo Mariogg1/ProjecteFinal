@@ -45,10 +45,18 @@ function register(){
             segonCognom: segon_cognom,
             email: correu
         }).then(function(response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuari registrat amb éxit!',
+            })
                 console.log("Usuari registrat amb id="+ response.data);
         }).catch(error => console.error(error));;
     }
     else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Dades no vàlides',
+        })
         document.getElementById("alerta").style.display="block";
     }
 }

@@ -16,6 +16,9 @@
                 </ul>
             </nav>
         </div>
-        <a id="salir" href="sortir.php">Sortir</a>
+        <a href="sortir.php">
+            <img class ="logout-image" alt="logout icon" height="40px" src="fotos/logout.svg"></img>
+            <p id="salir">Sortir</p>
+        </a>
     </div>
 </header>

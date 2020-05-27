@@ -86,8 +86,8 @@ footer {
 }
 #salir{
     position: absolute;
-    right: 10px;
-    top:87px;
+    right: 30px;
+    top:70px;
 }
 #mapa{
     padding-top: 3rem;
@@ -149,4 +149,10 @@ footer {
 }
 .container{
     padding-top:10px;
+}
+
+.logout-image{
+    position: absolute;
+    right: 25px;
+    top: 25px;
 }

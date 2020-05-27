@@ -23,7 +23,8 @@
         <div class="container">
             <div class="carta">
                 <div class="carta2">
-                    <p>Es una mapa clickejable que depèn de la comarca que posis et porta a un lloc amb una informació diferent</p>
+                    <p id="text1">Aqui tenim un mapa interactiu que actualiza la seva informació cada 24h en tota la comunitat autonoma de Catalunya<br>
+                    També té diferents opcions apart del mapa, on pots veure una taula amb totes les comarques i dades mes completes</p>
                 </div>
             </div>
             <div class="row align-items-center my-5">

@@ -1,8 +1,30 @@
 header{
     border: 1px solid black;
+    background-color: #333;
 }
 .navbar-nav{
     color:white;
+}
+#tituloaplicacion{
+    color:white;
+}
+#registre{
+    margin-top:5px;
+}
+#mapa1{
+    color:white;
+}
+#test1{
+    color:white;
+}
+#informacio1{
+    color:white;
+}
+#foro1{
+    color:white;
+}
+#faltalogin{
+    margin-top:10px;
 }
 .todoHeader{
     display:flex;
@@ -15,32 +37,36 @@ header{
 .boton{
     display:flex;
 }
+#alerta{
+    display:none;
+  }
 .ultimasNoticias{
     text-align: center;
-}
-#alerta{
-  display:none;
 }
 #alerta2{
     display:none;
   }
 .carta2{
-    border: 2px solid grey;
-    padding: 10px;
+    border: 2px solid #808080;
+    padding: 2px;
     border-radius: 15px;
     color: white;
-    background-color: grey;
+    background-color: #808080;
     text-align: center;
 }
 .carta{
-    padding: 10px;
+    padding: 2px;
+}
+#text1{
+    margin-bottom:0rem;
 }
 footer {
     position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: grey;
+    height: 50px;
+    background-color: #808080;
     color: white;
     text-align: center;
     padding:10px;
@@ -115,4 +141,12 @@ footer {
 
 #tablaSospitososAPI{
     display:none;
+}
+#tablatest{
+    border: 1px solid black;
+    padding:10px;
+    margin:10px;
+}
+.container{
+    padding-top:10px;
 }

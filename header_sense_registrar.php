@@ -2,17 +2,17 @@
     <div class="todoHeader">
         <div>
             <div class="titulo">
-                <h1>
+                <h1 id="tituloaplicacion">
                     Informació actualizada sobre el Covid-19
                 </h1>
             </div>
             <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white" style="justify-content: center;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-#333" style="justify-content: center;">
                 <ul class="navbar-nav">
-                        <a class="nav-link" href="index.php">Mapa</a>
-                        <a class="nav-link" href="selectorTest.php">Test</a>
-                        <a class="nav-link" href="info.php">Informació</a>
-                        <a class="nav-link" href="foro.php">Foro</a>
+                        <a class="nav-link" id="mapa1" href="index.php">Mapa</a>
+                        <a class="nav-link" id="test1"href="selectorTest.php">Test</a>
+                        <a class="nav-link" id="informacio1"href="info.php">Informació</a>
+                        <a class="nav-link" id="foro1"href="foro.php">Foro</a>
                 </ul>
             </nav>
         </div>
@@ -28,11 +28,11 @@
                         <input id="login_passwrd" type="password" placeholder="Password" required="required">
                     </div>
                 </div>
-                <div class="boton">
-                    <button type="button" id="envia" onclick="login()">Login</button>
-                    <button type="button" data-toggle="modal" data-target="#modalRegistre">Registra't</button>
+                <div id="registre">
+                    <button type="button" id="envia" class="btn btn-primary btn-sm" onclick="login()">Login</button>
+                    <button type="button" data-toggle="modal" data-target="#modalRegistre" class="btn btn-primary btn-sm">Registrat</button>
                 </div>
-                </div>
+            </div>
         </form>
             <!--Final formulario-->
     </div>
@@ -43,10 +43,7 @@
                     <h2 class="modal-title">Registre</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-                <div class="modal-body">	
-                    <div class="alert alert-warning" role="alert" id="alerta">
-                        Les dades no estan bé
-                    </div>			
+                <div class="modal-body">			
                     <div class="form-group">
                         <label>*Usuari</label>
                         <input id ="registre_usuari" type="text" class="form-control" required="required">

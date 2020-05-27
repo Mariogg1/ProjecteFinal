@@ -19,6 +19,8 @@
         <?php
             include_once 'header_sense_registrar.php';
         ?>
-        <a>No es pot obrir sense fer login</a>
+        <div class="alert alert-danger" id="faltalogin"role="alert">
+            No pot obrir sense fer Login
+        </div>
     </body>
 </html>

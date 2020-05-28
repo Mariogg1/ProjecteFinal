@@ -7,9 +7,6 @@ function comentari(){
         alert(registre_comentari);
         if(response.data == "Bien") {
             alert("Comentari afegir");
-        } 
-        else {
-            console.log(response.data);
         }
     }).catch(error => console.error(error));;
 }

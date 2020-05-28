@@ -12,7 +12,7 @@
                         <a class="nav-link" id="mapa1" href="index.php">Mapa</a>
                         <a class="nav-link" id="test1"href="selectorTest.php">Test</a>
                         <a class="nav-link" id="informacio1"href="info.php">Informació</a>
-                        <a class="nav-link" id="foro1"href="foro.php">Foro</a>
+                        <a class="nav-link" id="foro1"href="foro.php">Fòrum</a>
                 </ul>
             </nav>
         </div>

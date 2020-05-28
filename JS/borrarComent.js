@@ -12,7 +12,6 @@ function borrarComent(num){
         if (result.value) {
             axios.delete(`api.php/records/comentaris/${num}`, {
             }).then(response => {
-                console.log("S'ha esborrat el comentar: "+response.data)
                 Swal.fire(
                     'Esborrat!',
                     'S\'ha esborrat el comentari.',

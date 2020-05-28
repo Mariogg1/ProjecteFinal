@@ -31,7 +31,6 @@
                         fecha: data,
                         nomUsuari: nom
                     }).then(function(response) {
-                        console.log("Comentari registrat amb id="+ response.data);
                         location.reload();
                     }).catch(error => console.error(error));
                 }

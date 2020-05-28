@@ -1,9 +1,7 @@
 var app = new Vue({
     el:'#main',
     data: {
-        coments: 0,
-        pag: 1,
-        perPag: 10,
+        coments: 0
     },
     created: function (){
         this.getData();

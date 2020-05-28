@@ -1,0 +1,73 @@
+La carpeta API té com a objectiu agafar les dades que ens atorga la generalitat,
+convertir-la al format que ens interessa i emmagatzemar-la.
+
+-------------------------------------------------------------------------------------------------
+api.php:
+-------------------------------------------------------------------------------------------------
+Aquest document agafa i guarda totes les dades directament de la generalitat
+en la variable $data.
+
+Posteriorment crea 42 (una per a cada comarca) variables de tipus "comarca", una classe pròpia
+que conté les variables que volem emmagatzemar per a cadascuna.
+
+Mitjançant un foreach vem recorrent totes les dades que hi ha en $data i les anem afegint
+a les variables de tipus "comarca" que corresponen.
+
+Per últim, es crea una connexió amb la nostra bdd utilitzant la classe ComarquesBDD
+,que es troba a l'arxiu /API/comarques_BDD.php, i inserta les dades de les 42 comarques a la bdd.
+
+-------------------------------------------------------------------------------------------------
+api_actualitza.php:
+-------------------------------------------------------------------------------------------------
+Aquest document agafa i guarda totes les dades directament de la generalitat
+en la variable $data.
+
+Posteriorment crea 42 variables (una per a cada comarca) de tipus "comarca", una classe pròpia
+que conté les variables que volem emmagatzemar per a cadascuna.
+
+Mitjançant un foreach vem recorrent totes les dades que hi ha en $data i en el cas de que la data
+sigui del dia anterior a l'actual (les últimes dades disponibles) es guarda a la informació en la
+respectiva variable de tipus comarca.
+
+Per últim, es crea una connexió amb la nostra bdd utilitzant la classe ComarquesBDD,
+que es troba a l'arxiu /API/comarques_BDD.php, i fa un update a la bdd de les comarques que han
+petit algun canvi.
+
+Aquest arxiu s'ha d'executar en el servidor cada dia per tal de que les dades estiguin actualitzades,
+en el nostre cas ho fem mitjançant crontab com el següent:
+
+0 7 * * * php ProjecteFinal/API/api_actualitza.php
+
+-------------------------------------------------------------------------------------------------
+comarques_BDD.php
+-------------------------------------------------------------------------------------------------
+En aquesta classe es defineix tot el que respecta a la bdd i la seva gestió.
+
+La classe té un self construct per emmagatzemar-les dades de la bdd a la que es connectarà.
+
+La funció open_connection() estableix la connexió amb la bdd i per tant és obligatori que s'executi
+abans d'utilitzar qualsevol altra funció.
+
+close_connection() tanca la connexió amb la bdd per tant s'haurà d'executar en terminar d'utilitzar-la.
+
+execute_single_query() agafa la query SQL emmagatzemada a $query i l'executa, en cas de no donar error
+imprimeix "Bien" en cas contrari "Mal" + missatge d'error. Abans d'acabar tanca connexió amb la bdd.
+
+insertComarca($comarca) separa les dades de $comarca en variables independents i reemplaça el caràcter
+' per \' per a que Posteriormentno hi hagi problemes a l'executar la query en SQL. Després estableix
+la query en $query i crida a execute_single_query() per a que l'executi.
+
+updateComarca($comarca) fa exactament el mateix que insertComarca($comarca) però en comptes d'inserir
+a la bdd només actualitza.
+
+deleteComarques() esborra tot el contingut de la taula COMARCA a la bdd.
+
+-------------------------------------------------------------------------------------------------
+dades_BDD.php
+-------------------------------------------------------------------------------------------------
+
+En aquest fitxer s'han de guardar les dades de la connexió a la bdd en les següents variables:
+$db_host = "";
+$db_user = "";
+$db_pass = "";
+$db_name = "";

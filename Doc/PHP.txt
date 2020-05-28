@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------------------------
+bdd.php
+-------------------------------------------------------------------------------------------------
+En aquesta classe es defineix tot el que respecta a la bdd i la seva gestió.
+
+La classe té un self construct per emmagatzemar-les dades de la bdd a la que es connectarà.
+
+La funció open_connection() estableix la connexió amb la bdd i per tant és obligatori que s'executi
+abans d'utilitzar qualsevol altra funció.
+
+close_connection() tanca la connexió amb la bdd per tant s'haurà d'executar en terminar d'utilitzar-la.
+
+execute_single_query() agafa la query SQL emmagatzemada a $query i l'executa, en cas de no donar error
+imprimeix "Bien" en cas contrari "Mal". Abans d'acabar tanca connexió amb la bdd.
+
+inserirUsuari($usuari, $password, $email, $nom, $primer_cognom, $segon_cognom) estableix la query en 
+$query per a fer un insert en la taula usuaris i crida a execute_single_query() per a que l'executi.
+
+inserirComentari($comentari) estableix la query en $query per a fer un insert en la taula comentaris 
+i crida a execute_single_query() per a que l'executi.
+
+comprovaLogin($usuari, $password) estableix una query per fer un select amb les dades que contenen 
+$usuaris i $password, s'obre conexió a la bdd i es guarden a $results els resultats de la query.
+En cas de que $results contingui més d'una columna s'obre una session amb el nom de l'usuari i 
+retorna "Ok". EN cas contrari es retorna "Error".
+
+-------------------------------------------------------------------------------------------------
+login.php
+-------------------------------------------------------------------------------------------------
+Rep per $_POST els valors que se li passen a través d'axios desde js, comprova que no estiguin 
+buits i estableix connexió amb la bdd. Crida a la funció comprovaLogin i imprimeix el resultat.

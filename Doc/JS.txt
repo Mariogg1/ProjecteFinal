@@ -1,0 +1,104 @@
+La carpeta JS emmagatzema tots els scripts que s'executaràn en la part de client.
+
+-------------------------------------------------------------------------------------------------
+appVue.js
+-------------------------------------------------------------------------------------------------
+En aquest arxiu es troben dos variables de Vue (app i app2) que controlen la informació que es
+mostra tant del mapa (app2) com del llistat (app).
+
+En carregar l'script la funció getData() s'executa i emplena la variable comarques amb les dades
+de la taula COMARCA de la bdd. Al div amb id "llista" es mostraran les dades que hi ha a la
+variable comarca de 10 en 10 com estableix la variable perPag mitjançant la senténcia Vue:
+v-if="(pag - 1) * perPag <= i  && pag * perPag > i"
+
+Dins el div amb id "targetaMapa" es mostra la informació que hi ha a la variable comarcaActual,
+que és la comarca que té seleccionada l'usuari en el mapa. Quan l'usuari fa click en una comarca 
+s'executa la funció setComarcaActual(comarca) on "comarca" es la posició de la comarca seleccionada
+i atribueix a comarcaActual les dades que hi ha en la variable comarques[comarca] de la variable app.
+
+-------------------------------------------------------------------------------------------------
+borrarComent.js
+-------------------------------------------------------------------------------------------------
+borrarComent(num) num es el propi element (que ens interesa perque te com a id la clau primaria
+del comentari), llavors ens quedem només la id.
+
+Executem un swal.fire (plugin per a millorar les alertes) per confirmar que l'usuari vol eliminar
+el comentari i en cas afirmatiu fem una peticio delete, si es realitza amb èxit un swal.fire avisa
+a l'usari que s'ha esborrat el comentari i actualitza la pàgina per a que ja no mostri el comentari
+eaborrat.
+
+-------------------------------------------------------------------------------------------------
+foro2.php - Script function comentari()
+-------------------------------------------------------------------------------------------------
+comentari() guarda en la variable comentari el que ha escrit l'usuari, la data en el format que volem 
+i el nom que tenim guardat en la variable $_SESSION de php. Mitjançant una peticio post afegim el 
+comentari a la taula "comentaris" de la bdd
+
+-------------------------------------------------------------------------------------------------
+login.js
+-------------------------------------------------------------------------------------------------
+login() agafa els valors introduits per l'usuari i fa una peticio post a login.php, en cas de que
+la petició retorni el valor desitjat "Ok" s'avisa a l'usuari de que ha iniciat sessió amb swal.fire
+en cas contrari, se li notifica que no.
+
+-------------------------------------------------------------------------------------------------
+mapaLlistat.js
+-------------------------------------------------------------------------------------------------
+Aquest script controla el que es mostra a la web a través de la interacció amb els botons.
+veureMapa() mostra el mapa i la seva targeta i oculta el llistat. veureLlistat() oculta el mapa i 
+la seva targeta i mostra el llistat.
+
+-------------------------------------------------------------------------------------------------
+mapaInteractivo.js
+-------------------------------------------------------------------------------------------------
+Aquest script fa ús d'un script extern anomenat snapSVG. la variable "s" es l'objectiu on es
+carregara el que modifiquem, en aquest cas el node amb id "mapa". Snap.load() el que fa es carregar
+el svg seleccionat i executa una funció que agafa tots els nodes del svg, els fica en una variable
+i els carrega al node que habíem guardat en la variable "s". Després agafa cada comarca (un node 
+de l'arxiu svg que com a id té el seu nom) i el guarda en una variable a la que li afegeix un event 
+onclick que executa la funció setColors(g, comarca, num).
+
+setColors(g, comarca, num) la variable "g" es l'agrupació de tots els nodes de l'arxiu svg, "comarca"
+es el node concret de la comarca que s'ha clickat i num es la posició de la comarca. Aquesta funció
+el que fa és modificar els colors fent vermella la comarca seleccionada i posant gris la resta,
+també crida a la funcio setComarcaActual de la variable app2 de appVue.js
+
+-------------------------------------------------------------------------------------------------
+registre.js
+-------------------------------------------------------------------------------------------------
+register() agafa les dades que ha introduit l'usuari i les enmgatzema, comprova que no estiguin
+buits i en el cas del nom i cognoms que no continguin numeros. Una vegada fetes les comprovacions
+en cas de que tot estigui correcte es fa una petició post que si es completa amb exit informa a 
+l'usuari que ha estat registrat. En cas contrari informa a l'usari que les dades no son correctes.
+
+-------------------------------------------------------------------------------------------------
+SospitososVUE.js
+-------------------------------------------------------------------------------------------------
+Aqui està la variable app de Vue que controla el node amb id="tablaSospitososAPI". Conté les 
+variables numCasos (on s'emmagatzemen la cuantitat de casos detectats), comarcas (un objecte que 
+conté les diferents comarques amb la respectiva informació), pag i perPag que estableixen el numero
+de comarques que es mostraranper pantalla a la vegada amb la seguent sentencia: 
+v-if="(pag - 1) * perPag <= i  && pag * perPag > i".
+
+En carregar l'script la funció getData() s'executa i emplena la variable comarcas amb la informació 
+que rep de la petició get de axios a la taula SospitososAPI.
+
+En cas de que el formulari es completi amb éxit s'executa la funció sumaCas(comarca, sexe),
+que afegeix la dada rebuda a la variable "comarcas" en la comarca tingui com a "nom" la variable 
+"comarca". També augmenta la variable numCasos.
+
+-------------------------------------------------------------------------------------------------
+test.js
+-------------------------------------------------------------------------------------------------
+veureCoincidencies() agafa la informació que introdueix l'usuari al formulari i en cas de que no hi
+hagi 3 o més preguntes afirmatives, s'informa al usuari que no sembla un cas positiu mitjançant un 
+swal.fire. En cas contrari es crida a el metode sumaCas de la variable app de SospitososVUE.js, 
+s'informa a l'usuari que podria estar un cas possitiu  i es realitza una petició post a la taula 
+SospitososAPI per contabilitzar el cas. Per últim oculta el formulari i mostra els resultats.
+
+-------------------------------------------------------------------------------------------------
+vueForo.js
+-------------------------------------------------------------------------------------------------
+Conté una variable "app" de Vue que controla el contingut del node amb id="main". En carregar 
+l'script s'executa la funció getData() que el que fa es una petició get a la taula comentaris
+i els guarda a la variable coments desde on es mostren a la pag foro2.php.

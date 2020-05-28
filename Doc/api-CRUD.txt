@@ -1,0 +1,3 @@
+api.php és una aplicació externa que simplifica les peticions a la bdd realitzades a través d'axios.
+
+https://github.com/mevdschee/php-crud-api

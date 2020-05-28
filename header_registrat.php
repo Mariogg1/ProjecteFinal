@@ -3,7 +3,7 @@
         <div>
             <div class="titulo">
                 <h1 id="tituloaplicacion">
-                    Informació actualizada sobre el Covid-19
+                    Informació actualitzada sobre el Covid-19
                 </h1>
             </div>
             <!--Navbar-->

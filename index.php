@@ -23,8 +23,8 @@
         <div class="container">
             <div class="carta">
                 <div class="carta2">
-                    <p id="text1">Aqui tenim un mapa interactiu que actualiza la seva informació cada 24h en tota la comunitat autonoma de Catalunya<br>
-                    També té diferents opcions apart del mapa, on pots veure una taula amb totes les comarques i dades mes completes</p>
+                    <p id="text1">Aquí tenim un mapa interactiu que actualitza la seva informació cada 24 h en tota la comunitat autònoma de Catalunya
+                        També té diferents opcions a part del mapa, on pots veure una taula amb totes les comarques i dades més completes.</p>
                 </div>
             </div>
             <div class="row align-items-center my-5">

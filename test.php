@@ -21,7 +21,7 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-7" id="tablatest">
                 <div>
-                    <h3>1. Has viatjat fora d'Espanya en aquests ultims mesos?</h3>
+                    <h3>1. Has viatjat fora d'Espanya en aquests últims mesos?</h3>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline1">Si</label>
@@ -45,7 +45,7 @@
                 </div>
                 <br>
                 <div>
-                    <h3>3. Has estat convivint o aprop d'algun infectat?</h3>
+                    <h3>3. Has estat convivint o a prop d'algun infectat?</h3>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline5" name="customRadioInline3" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline5">Si</label>
@@ -57,7 +57,7 @@
                 </div>
                 <br>
                 <div>
-                    <h3>4. Has tingut perdua del olfacte i gust?</h3>
+                    <h3>4. Has tingut pèrdua del olfacte i gust?</h3>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline7" name="customRadioInline4" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline7">Si</label>
